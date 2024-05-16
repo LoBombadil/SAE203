@@ -14,14 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
 </head>
-<ul class="row">
+<body>
+    <ul class="row">
         <li><a href="afficherAmenageurs.php" target="_blank">Afficher_Amenageurs</a></li>
         <li><a href="afficherOperateurs.php" target="_blank">Afficher_Operateurs</a></li>
         <li><a href="afficherBornes.php" target="_blank">Afficher_Bornes</a></li>
         <li><a href="recherche.php" target="_blank">Recherche</a></li>
     </ul>
-<body>
-
 </body>
 </html>
 
