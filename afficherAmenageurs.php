@@ -29,39 +29,42 @@
 				<th>siren</th>
 				<th>nom</th>
 				<th>contact</th>
+<?php
 
+	try {
+                // Récupération des données
+                $servername = "127.0.0.1";
+                $dbname = "BUTRT1_lg409538";
+                $username = "lg409538";
+                $userpassword = "MDP_lg409538";
 
-            <?php
+                // Création de la connexion
+                $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", $username, $userpassword);
+                $lienBDD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo "Acces BDD réaliser";
 
-            //recuperation des donnees
-            $servername = "127.0.0.1";
-            $dbname = "BUTRT1_lg409538";
-            $username = "lg409538";
-            $userpassword = "MDP_lg409538";
-            $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", "$username", "$userpassword");
-            $lienBDD->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                // Requête SQL
+                $requeteSQL = $lienBDD->prepare("SELECT siren, nom, contact FROM amenageurs");
+                $requeteSQL->execute();
 
-
-            if ($lienBDD->connect_error) {
-                die("Erreur de connection: " . $lienBDD->connect_error);
-            }
-
-            $sql = "SELECT siren, nom, contact from amenageurs";
-            $result = $lienBDD->query($sql);
-
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr><td>".$row["siren"]."</td><td>".$row["nom"]."</td><td>".$row["contact"]."</td></tr>";
+                // Affichage des résultats dans un tableau
+                $result = $requeteSQL->fetchAll(PDO::FETCH_ASSOC);
+                if ($result) {
+                    foreach ($result as $row) {
+                        echo "<tr><td>" . $row["siren"] . "</td><td>" . $row["nom"] . "</td><td>" . $row["contact"] . "</td></tr>";
+                    }
                 }
-                echo "</table>";
-            }
-            else {
-                echo "0 resultats";
-            }
-            $lienBDD->close();
 
-            ?>
+                else {
+                echo "<tr><td colspan='3'>0 résultats</td></tr>";
+                }
 
+            }
+            catch (PDOException $e)
+            {
+        	die("Erreur : ").$e-> getMessage();
+            }
+?>
 		</table>
 		</section>
 </body>
