@@ -43,7 +43,7 @@
                 echo 'ca ma';
                 $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", "$username", "$userpassword");
                 $lienBDD->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Acces BDD réaliser";
+		$requeteSQL->execute();
 
                 //Prepare la requête
                 $requeteSQL = $lienBDD->prepare("SELECT siren, nom, contact FROM amenageurs");
@@ -58,9 +58,6 @@
                 else {
                     echo "<tr><td colspan='3'>0 résultats</td></tr>";
                 }
-
-            //Execute la reqque de l'insertion
-            $requeteSQL->execute();
             }
             catch (PDOException $e)
             {
