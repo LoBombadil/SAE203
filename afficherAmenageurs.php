@@ -15,7 +15,7 @@
 </head>
 <ul class="row">
         <li><a href="afficherAmenageurs.php" target="_blank">Afficher_Amenageurs</a></li>
-        <li><a href="ajouterAmenageur.php" target="_blank">Ajouter_Amenageurs</a></li>
+        <li><a href="ajouterAmenageur.html" target="_blank">Ajouter_Amenageurs</a></li>
         <li><a href="supprimerAmenageurs.php" target="_blank">Supprimer_Amenageurs</a></li>
         <li><a href="recherches.php" target="_blank">Recherches</a></li>
     </ul>
