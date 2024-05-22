@@ -1,6 +1,17 @@
 # Projet n°1 : Bornes de recharge véhicules électriques
 
-https://www.data.gouv.fr/fr/datasets/fichier-consolide-des-bornes-de-recharge-pour-vehicules-electriques/
 
+```bash
 
-ca marche
+git clone https://github.com/LoBombadil/SAE203.git 
+```
+
+```bash
+scp -r SAE203 x@10.129.59.20:/home/Etudiants/RT/BUT-RT-1/
+
+```
+
+Site 
+```
+10.129.59.20/~x/sae203/
+```
