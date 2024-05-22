@@ -40,14 +40,13 @@
                 $dbname = "BUTRT1_lg409538";
                 $username = "lg409538";
                 $userpassword = "MDP_lg409538";
-                echo 'ca ma';
-                $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", "$username", "$userpassword");
+		
+		$lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", "$username", "$userpassword");
                 $lienBDD->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$requeteSQL->execute();
 
                 //Prepare la requête
                 $requeteSQL = $lienBDD->prepare("SELECT siren, nom, contact FROM amenageurs");
-
+                $requeteSQL->execute();
                 // Affichage des résultats dans un tableau
                 $tab = $requeteSQL->fetchAll(PDO::FETCH_ASSOC);
                 if ($tab) {
