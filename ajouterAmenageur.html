@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+  <html lang="fr">
+
+  <head>
+      <title>Ajout</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="BaseBootstrap/css/afficherAmenageurs.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,1    00..700&display=swap"
+                      rel="stylesheet">
+                      <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Josefin+    Sans:ital,wght@0,100..700;1,100..700&display=swap"
+          rel="stylesheet">
+  </head>
+  <body>
+          <ul class="row">
+                  <li><a href="afficherAmenageurs.php" target="_blank">Afficher_Amenageurs</a></li>
+                  <li><a href="ajouterAmenageur.html" target="_blank">Ajouter_Amenageurs</a></li>
+                  <li><a href="supprimerAmenageurs.php" target="_blank">Supprimer_Amenageurs</a></li>
+                  <li><a href="recherches.php" target="_blank">Recherches</a></li>
+          </ul>
+          <h1>Amenageurs</h1>
+          <section class="col-md-7">
+          <p>Ajoutez un aménageur</p>
+
+          <form action="ajouterAmenageur.php" method="get">
+                  <p>N° siren : <input type="text" name="siren"></p>
+                  <p>Nom : <input type="text" name="nom"></p>
+                  <p>Contact : <input type="text" name="contact"></p>
+                  <input type="submit" value="Ajouter">
+          </form>
+  </body>
+  </html>
