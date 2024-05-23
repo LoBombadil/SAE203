@@ -27,21 +27,18 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="afficherAmenageurs.php" target="_blank">Afficher</a></li>
-                <li><a href="ajouterAmenageur.php" target="_blank">Ajouter</a></li>
-                <li><a href="supprimerAmenageurs.php" target="_blank">Supprimer</a></li>
-                <li><a href="recherches.php" target="_blank">Recherches</a></li>
+                <li><a href="afficherAmenageurs.php">Afficher</a></li>
+                <li><a href="ajouterAmenageur.php">Ajouter</a></li>
+                <li><a href="supprimerAmenageurs.php">Supprimer</a></li>
+                <li><a href="recherches.php">Recherches</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container-fluid text-center">
+<div class="container-fluid">
     <div class="row content">
-        <div class="col-sm-2 sidenav">
-
-        </div>
-        <div class="col-sm-8 text-left">
+        <div class="col-sm-10">
             <h1>Amenageur</h1>
             <section class="col-md-7">
                 <form action="afficherAmenageurs.php" method="get">
@@ -75,10 +72,10 @@
                 $dbname = "BUTRT1_lg409538";
                 $username = "lg409538";
                 $userpassword = "MDP_lg409538";
-                echo 'ca ma';
+                //echo 'ca ma';
                 $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", "$username", "$userpassword");
                 $lienBDD->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Acces BDD réaliser";
+                //echo "Acces BDD réaliser";
 
                 //Prepare la requête
                 $requeteSQL = $lienBDD->prepare("SELECT siren, nom, contact FROM amenageurs");
