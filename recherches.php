@@ -53,7 +53,7 @@
                         $lienBDD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                         // Obtenir la liste des communes
-                        $requeteSQL = $lienBDD->prepare("SELECT DISTINCT s.commune FROM stations s;");
+                        $requeteSQL = $lienBDD->prepare("SELECT DISTINCT s.commune FROM stations s ORDER BY s.commune;");
                         $requeteSQL->execute();
                         $communes = $requeteSQL->fetchAll(PDO::FETCH_ASSOC);
 
@@ -63,7 +63,7 @@
                         if (isset($_POST['commune']) && $_POST['commune'] !== '') {
                             $commune = $_POST['commune'];
                             // Obtenir la liste des opérateurs pour la commune sélectionnée
-                            $requeteSQL = $lienBDD->prepare("SELECT DISTINCT o.nom FROM operateurs o INNER JOIN stations s ON o.id = s.operateur_id WHERE s.commune = :commune");
+                            $requeteSQL = $lienBDD->prepare("SELECT DISTINCT o.nom FROM operateurs o INNER JOIN stations s ON o.id = s.operateur_id WHERE s.commune = :commune ORDER BY o.nom");
                             $requeteSQL->bindParam(':commune', $commune, PDO::PARAM_STR);
                             $requeteSQL->execute();
                             $operateurs = $requeteSQL->fetchAll(PDO::FETCH_ASSOC);
