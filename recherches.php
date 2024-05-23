@@ -39,14 +39,22 @@
 
   <section class="col-md-7">
 
-    <label for="recherche">Quel est le nom de l'opérateur que vous recherchez ?</label>
+    <label for="recherche">Choisissez votre commune</label>
+    <select id="recherche" name="recherche">
+      <option value="">Sélectionner une commune</option>
+    </select>
+    
+
+    <label for="recherche"> Choisiser votre operateur</label>
     <select id="recherche" name="recherche">
       <option value="">Sélectionner un opérateur</option>
+    </select>
 
+   
       <?php
 
       try {
-        // Database connection details (replace with your actual credentials)
+        // Connexion à la base de données
         $servername = "127.0.0.1";
         $dbname = "BUTRT1_lg409538";
         $username = "lg409538";
@@ -55,16 +63,17 @@
         $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", $username, $userpassword);
         $lienBDD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Prepare the SQL query
-        $requeteSQL = $lienBDD->prepare("SELECT o.nom, s.commune FROM operateurs o INNER JOIN stations s ON o.id = s.operateur_id;");
+        // Preparation de la requête SQL
+        $requeteSQL = $lienBDD->prepare("SELECT DISTINCT o.nom, s.commune FROM operateurs o INNER JOIN stations s ON o.id = s.operateur_id;");
         $requeteSQL->execute();
 
-        // Fetch results as associative array
+        // Afficher les résultats dans un tableau
         $tab = $requeteSQL->fetchAll(PDO::FETCH_ASSOC);
 
         if (count($tab) > 0) {
           foreach ($tab as $donnees) {
-            echo "<option value='" . $donnees['nom'] . "'>" . $donnees['nom'] . " (" . $donnees['commune'] . ")</option>";
+		  echo "<option value='" . $donnees['nom'] . "'>" . $donnees['nom'] . "</option>";
+		  echo "<option value='" . $donnees['commune'] . "'>" . $donnees['commune'] . "</option>";
           }
         } else {
           echo "<option value=''>Aucun opérateur trouvé</option>";
