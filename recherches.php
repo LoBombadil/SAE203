@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <title>Ajout</title>
+    <title>Rechercher</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -38,9 +38,8 @@
 <h1>Amenageurs</h1>
 <section class="col-md-7">
 
-    <p>Entreprises ayant mis en place les stations de recharge.</p>
-    <label for "recherche"> La commune est</label>
-    <select id="recherche name="recherche">
+    <label for "recherche"> Quel est le nom d'operateurs dont vous voulez ?</label>
+    <select id="recherche" name="recherche">
         <option value='0'></option>
 
         <?php
@@ -51,22 +50,20 @@
             $dbname = "BUTRT1_lg409538";
             $username = "lg409538";
             $userpassword = "MDP_lg409538";
-            echo 'ca ma';
+            echo 'ca marche';
             $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", "$username", "$userpassword");
             $lienBDD->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "Acces BDD réaliser";
 
             //Prepare la requête
-            $requeteSQL = $lienBDD->prepare("SELECT nom, commun
-                                                   FROM operateurs INNER JOIN station
-                                                   ON operateurs.id = station.operateur_id");
+            $requeteSQL = $lienBDD->prepare("SELECT o.nom, s.commune FROM operateurs o INNER JOIN stations s ON o.id = s.operateur_id;");
             $requeteSQL->execute();
 
 
             // Affichage des résultats dans un tableau
             $tab = $requeteSQL->fetchAll(PDO::FETCH_ASSOC);
                 while ($donnees = $tab) {
-                    echo "<option value='".$donnees['commun']."'>".$donnees['commun']."</option>";
+                    echo "<option value='".$donnees['o.nom']."'>".$donnees['s.commune']."</option>";
                 }
         }
         catch (PDOException $e)
