@@ -19,7 +19,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Logo</a>
+            <img src="BaseBootstrap/img/logo_rt-removebg-preview.png" width=40%>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
