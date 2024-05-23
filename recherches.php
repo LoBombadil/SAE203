@@ -63,7 +63,12 @@
                         if (isset($_POST['commune']) && $_POST['commune'] !== '') {
                             $commune = $_POST['commune'];
                             // Obtenir la liste des opérateurs pour la commune sélectionnée
-                            $requeteSQL = $lienBDD->prepare("SELECT DISTINCT o.nom FROM operateurs o INNER JOIN stations s ON o.id = s.operateur_id WHERE s.commune = :commune ORDER BY o.nom");
+                            $requeteSQL = $lienBDD->prepare("SELECT DISTINCT o.nom FROM operateurs o
+                                                    INNER JOIN stations s
+                                                    ON o.id = s.operateur_id
+                                                    WHERE s.commune = :commune
+                                                    ORDER BY o.nom");
+                            
                             $requeteSQL->bindParam(':commune', $commune, PDO::PARAM_STR);
                             $requeteSQL->execute();
                             $operateurs = $requeteSQL->fetchAll(PDO::FETCH_ASSOC);
@@ -73,7 +78,9 @@
                     }
                     ?>
 
-                    <?php foreach ($communes as $donnee): ?>
+                    <?php 
+                    foreach ($communes as $donnee): 
+                    ?>
                         <option value="<?= $donnee['commune'] ?>" <?= (isset($commune) && $commune === $donnee['commune']) ? 'selected' : '' ?>>
                             <?= $donnee['commune'] ?>
                         </option>
