@@ -27,10 +27,10 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="afficherAmenageurs.php" target="_blank">Afficher</a></li>
-                <li><a href="ajouterAmenageur.php" target="_blank">Ajouter</a></li>
-                <li><a href="supprimerAmenageurs.php" target="_blank">Supprimer</a></li>
-                <li><a href="recherches.php" target="_blank">Recherches</a></li>
+                <li><a href="afficherAmenageurs.php">Afficher</a></li>
+                <li><a href="ajouterAmenageur.php">Ajouter</a></li>
+                <li><a href="supprimerAmenageurs.php">Supprimer</a></li>
+                <li><a href="recherches.php">Recherches</a></li>
             </ul>
         </div>
     </div>
