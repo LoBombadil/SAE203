@@ -61,8 +61,11 @@
     </div>
 </div>
     
- <footer  class="container-fluid text-center">
-  <p> sae203 © Yohann TSANGUE & Louis GRANVISIR-CLERC  </p>
+<footer class="container-fluid text-center">
+  <p>
+    <img src="BaseBootstrap/img/cropped-LOGOS_ADIUT_IUT_DIJON.png" width=20% align=left />
+    sae203 © Yohann TSANGUE & Louis GRANVISIR-CLERC
+  </p>
 </footer>
     
 </body>
