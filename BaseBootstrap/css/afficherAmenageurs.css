@@ -71,6 +71,15 @@ td, th {
     padding: 8px;
 }
 
+footer{
+  font-size: larger;
+  background-color: #555;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin: 3em;
+  width:100%
+  }
 tr:nth-child(even) {
     background-color: #dddddd;
 }
