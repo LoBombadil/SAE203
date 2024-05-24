@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <title>Ajout</title>
+    <title>Affichage de l'Amenageur</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -36,9 +36,11 @@
     </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid text-center">
     <div class="row content">
-        <div class="col-sm-10">
+        <div class="col-sm-2 sidenav">
+        </div>
+        <div class="col-sm-8 text-left">
             <h1>Amenageur</h1>
             <section class="col-md-7">
                 <form action="afficherAmenageurs.php" method="get">
@@ -46,21 +48,23 @@
                         <legend>Affiche Amenageur</legend>
                         <table>
                             <tr>
-
                                 <th>siren</th>
                                 <th>nom</th>
                                 <th>contact</th>
-
                             </tr>
-
-
-
                     </fieldset>
                 </form>
             </section>
         </div>
     </div>
 </div>
+				
+<footer>
+  <p> sae203 © Yohann TSANGUE & Louis GRANVISIR-CLERC  </p>
+</footer>				
+</body>
+				
+</html>
 
 
 
@@ -96,8 +100,3 @@
             die("Erreur : ").$e-> getMessage();
             }
             ?>
-
-		</table>
-		</section>
-</body>
-</html>
