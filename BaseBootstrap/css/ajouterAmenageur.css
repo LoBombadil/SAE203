@@ -53,3 +53,13 @@ input[type="submit"] {
     font-size:large;
     padding:0.3em;
 }
+
+footer{
+  font-size: larger;
+  background-color: #eee;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin: 9em;
+  width:50%
+  }
