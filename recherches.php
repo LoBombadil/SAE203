@@ -58,8 +58,6 @@
                         $communes = $requeteSQL->fetchAll(PDO::FETCH_ASSOC);
 
                         // Initialiser la liste des opérateurs
-                        $operateurs = [];
-
                         if (isset($_POST['commune']) && $_POST['commune'] !== '') {
                             $commune = $_POST['commune'];
                             // Obtenir la liste des opérateurs pour la commune sélectionnée
@@ -110,9 +108,12 @@
         <?php endif; ?>
     </section>
 </div>
-<footer  class="container-fluid text-center">
-  <p> sae203 © Yohann TSANGUE & Louis GRANVISIR-CLERC  </p>
-</footer> 
+<footer class="container-fluid text-center">
+  <p>
+    <img src="BaseBootstrap/img/cropped-LOGOS_ADIUT_IUT_DIJON.png" width=20% align=left />
+    sae203 © Yohann TSANGUE & Louis GRANVISIR-CLERC
+  </p>
+</footer>
     
 </body>
 </html>
