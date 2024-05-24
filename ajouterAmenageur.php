@@ -60,7 +60,10 @@
         </div>
     </div>
 </div>
-
+ <footer  class="container-fluid text-center">
+  <p> sae203 © Yohann TSANGUE & Louis GRANVISIR-CLERC  </p>
+</footer> 
+    
 </body>
 </html>
 
