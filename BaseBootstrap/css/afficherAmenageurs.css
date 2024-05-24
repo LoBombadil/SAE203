@@ -32,42 +32,21 @@ form {
     margin:auto;
     width:100%;
     padding:1em;
-    background-color: #a9c0dc;
+    background-color: white;
     border-radius: 5px;
 }
 
 fieldset {
     padding:1em;
+    width:200px
 }
 
 legend {
     font-weight: bold;
     font-size: large;
+    width: 540px;
 }
 
-input[type="text"] {
-    width: 70%;
-}
-
-input[type="submit"] {
-    font-size:large;
-    padding:0.3em;
-}
-
-li{
-    display: inline-block;
-    margin-right: 1em;
-}
-
-li a{
-    text-decoration: none;
-}
-
-
-body {
-	background-color: white;
-    margin: 2.5em;
-}
 
 section{
     background-color: rgba(255,255,255,0.5);
