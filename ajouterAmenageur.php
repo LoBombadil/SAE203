@@ -76,10 +76,7 @@
     $siren=$_GET["siren"];
     $nom=$_GET["nom"];
     $contact=$_GET["contact"];
-    //echo "<p>siren : $siren</p>";
-    //echo "<p>nom : $nom</p>";
-    //echo "<p>contact : $contact</p>";
-
+    
         try {
             // Récupération des données
             $servername = "127.0.0.1";
