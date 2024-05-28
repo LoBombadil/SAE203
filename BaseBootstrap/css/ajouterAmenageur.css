@@ -56,10 +56,10 @@ input[type="submit"] {
 
 footer{
   font-size: larger;
-  background-color: #eee;
+  background-color: black;
   color: white;
-  padding: 15px;
+  padding: 5px;
   text-align: center;
-  margin: 9em;
-  width:50%
+  margin: 1em;
+  width:100%
   }
