@@ -16,17 +16,23 @@
 
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-inverse">
+	<div class="container-fluid">
+	<div class="navbar-header">
+	<button class="navbar-toggler" id="navbtn" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		<img src="BaseBootstrap/img/logo_rt-removebg-preview.png" width=30%>
+	</button>
+	</div>
+    <!--<div class="container-fluid">
         <div class="navbar-header">
             <img src="BaseBootstrap/img/logo_rt-removebg-preview.png" width=40%>
-        </div>
+	</div>-->
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="afficherAmenageurs.php">Afficher</a></li>
                 <li><a href="ajouterAmenageur.html">Ajouter</a></li>
                 <li><a href="supprimerAmenageurs.html">Supprimer</a></li>
-                <li class="active"><a href="#">Recherches</a></li>
+                <li><a href="recherches.php">Recherches</a></li>
             </ul>
         </div>
     </div>
@@ -111,7 +117,7 @@
 <footer class="container-fluid text-center">
   <p>
     <img src="BaseBootstrap/img/cropped-LOGOS_ADIUT_IUT_DIJON.png" width=20% align=left />
-    sae203 © Yohann TSANGUE & Louis GRANVISIR-CLERC
+   COPYRIGHT © SAE203 - by GRANVISIR-CLERC 
   </p>
 </footer>
     
