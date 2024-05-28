@@ -28,8 +28,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="afficherAmenageurs.php">Afficher</a></li>
-                <li><a href="ajouterAmenageur.php">Ajouter</a></li>
-                <li><a href="supprimerAmenageurs.php">Supprimer</a></li>
+                <li><a href="ajouterAmenageur.html">Ajouter</a></li>
+                <li><a href="supprimerAmenageurs.html">Supprimer</a></li>
                 <li><a href="recherches.php">Recherches</a></li>
             </ul>
         </div>
@@ -44,18 +44,48 @@
         <div class="col-sm-8 text-left">
             <h1>Amenageur</h1>
             <section class="col-md-7">
-                <form action="supprimerAmenageurs.php" method="get">
-                    <fieldset>
-                        <legend>Supprimer Amenageur</legend>
-                        <label for="siren"> N° siren : </label>
-                        <input type="text" name="siren" id="siren"> <br>
-                        <label for="nom"> Nom : </label>
-                        <input type="text" name="nom" id="nom"><br>
-                        <label for="contact"> Contact : </label>
-                        <input type="text" name="contact" id="contact">
-                    </fieldset>
-                    <input type="submit" value="Supprimer">
-                </form>
+            <?php
+                // récupération des données du formulaire
+                $siren=$_GET["siren"];
+                $nom=$_GET["nom"];
+                $contact=$_GET["contact"];
+                //echo "<p>siren : $siren</p>";
+                //echo "<p>nom : $nom</p>";
+                //echo "<p>contact : $contact</p>";
+
+                try {
+                    // Récupération des données
+                    $servername = "127.0.0.1";
+                    $dbname = "BUTRT1_lg409538";
+                    $username = "lg409538";
+                    $userpassword = "MDP_lg409538";
+
+                    $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", "$username", "$userpassword");
+                    $lienBDD->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                    // Suppression de donne de la table amenageurs
+                    $requeteSQL = $lienBDD->prepare("DELETE FROM amenageurs
+                                                    WHERE siren=:siren
+                                                    AND nom=:nom
+                                                    AND contact=:contact");
+
+                    // Liaison des données avec la requête SQL
+                    $requeteSQL->bindParam(":siren",$siren);
+                    $requeteSQL->bindParam(":nom",$nom);
+                    $requeteSQL->bindParam(":contact",$contact);
+
+                    // Exécution de la requête SQL
+                    $requeteSQL->execute();
+                    echo "<p class='panel panel-success'>Votre aménageur a bien été supprimé à la base de données !</p>";
+                }
+                catch (PDOException $e)
+                {
+                    // traitement d'erreurs
+                    die ("Erreur : ".$e->getMessage());
+                }
+                ?>
+		<a class="btn btn-primary" href="supprimerAmenageurs.html" role="button">Supprimer un autre amenageur</a>
+		<a class="btn btn-outline-dark" href="ajouterAmenageur.html" role="button">Ajouter un amenageur</a>
             </section>
         </div>
     </div>
@@ -68,47 +98,5 @@
   </p>
 </footer>
     
-</body>
-</html>
-<?php
-// récupération des données du formulaire
-$siren=$_GET["siren"];
-$nom=$_GET["nom"];
-$contact=$_GET["contact"];
-//echo "<p>siren : $siren</p>";
-//echo "<p>nom : $nom</p>";
-//echo "<p>contact : $contact</p>";
-
-try {
-    // Récupération des données
-    $servername = "127.0.0.1";
-    $dbname = "BUTRT1_lg409538";
-    $username = "lg409538";
-    $userpassword = "MDP_lg409538";
-
-    $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", "$username", "$userpassword");
-    $lienBDD->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Suppression de donne de la table amenageurs
-    $requeteSQL = $lienBDD->prepare("DELETE FROM amenageurs
-                                    WHERE siren=:siren
-                                    AND nom=:nom
-                                    AND contact=:contact");
-
-    // Liaison des données avec la requête SQL
-    $requeteSQL->bindParam(":siren",$siren);
-    $requeteSQL->bindParam(":nom",$nom);
-    $requeteSQL->bindParam(":contact",$contact);
-
-    // Exécution de la requête SQL
-    $requeteSQL->execute();
-    echo "<p>Votre aménageur a bien été supprimer à la base de donnée !</p>";
-}
-catch (PDOException $e)
-{
-    // traitement d'erreurs
-    die ("Erreur : ".$e->getMessage());
-}
-?>
 </body>
 </html>
