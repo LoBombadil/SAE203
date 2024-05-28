@@ -3,9 +3,16 @@
     border-radius: 0;
 }
 
+html, body {
+	height: 100%;
+	padding: 0;
+	margin:0;
+}
+
 body{
     background-color: white;
-
+    display: flex;
+    flex-direction: column;
 }
 
 ul{
@@ -29,8 +36,9 @@ label {
 }
 
 form {
-    margin:auto;
+    margin: 0;
     width:100%;
+    min-width:400px;
     padding:1em;
     background-color: #a9c0dc;
     border-radius: 5px;
@@ -54,12 +62,16 @@ input[type="submit"] {
     padding:0.3em;
 }
 
-footer{
+footer {
   font-size: larger;
   background-color: black;
   color: white;
   padding: 5px;
   text-align: center;
-  margin: 1em;
-  width:100%
+  width:100%;
+  margin-top: auto;
+  }
+
+  #navbtn {
+	  background-color: black;
   }
