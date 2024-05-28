@@ -24,8 +24,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="afficherAmenageurs.php">Afficher</a></li>
-                <li><a href="ajouterAmenageur.php">Ajouter</a></li>
-                <li><a href="supprimerAmenageurs.php">Supprimer</a></li>
+                <li><a href="ajouterAmenageur.html">Ajouter</a></li>
+                <li><a href="supprimerAmenageurs.html">Supprimer</a></li>
                 <li class="active"><a href="#">Recherches</a></li>
             </ul>
         </div>
