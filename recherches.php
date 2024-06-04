@@ -47,14 +47,13 @@
                 <label for="commune">Choisissez votre commune</label>
                 <select id="commune" name="commune" class="form-control" onchange="this.form.submit()">
                     <option value="">Sélectionner une commune</option>
-                    <?php
-                    // Connexion à la base de données
-                    $servername = "127.0.0.1";
-                    $dbname = "BUTRT1_lg409538";
-                    $username = "lg409538";
-                    $userpassword = "MDP_lg409538";
-
+                <?php
                     try {
+			// Connexion à la base de données
+                    	$servername = "127.0.0.1";
+                    	$dbname = "BUTRT1_lg409538";
+                    	$username = "lg409538";
+                    	$userpassword = "MDP_lg409538";
                         $lienBDD = new PDO("mysql:host=$servername;dbname=$dbname", $username, $userpassword);
                         $lienBDD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
